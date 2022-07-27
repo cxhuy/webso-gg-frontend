@@ -28,8 +28,9 @@
     let days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
 </script>
 
-<div class="container px-3 mt-4 py-2.5">
-    <div class="flex flex-col gap-1.5">
+<div class="container px-3 mt-8 py-2.5">
+    <span class="text-3xl font-light dark:text-gray-200">시간대별 조회수 통계</span>
+    <div class="mt-2 flex flex-col gap-1.5">
         {#each days as day, dayIndex}
             <div class="flex gap-1.5">
                 <span class="mr-2 text-xl font-light dark:text-gray-200">월</span>
