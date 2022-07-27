@@ -25,7 +25,7 @@
         },
     }
     console.log(Object.values(heatmapData.views)[0])
-    let days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
+    let days = ["월", "화", "수", "목", "금", "토", "일"]
 </script>
 
 <div class="container px-3 mt-8 py-2.5">
@@ -33,7 +33,7 @@
     <div class="mt-2 flex flex-col gap-1.5">
         {#each days as day, dayIndex}
             <div class="flex gap-1.5">
-                <span class="mr-2 text-xl font-light dark:text-gray-200">월</span>
+                <span class="mr-2 text-xl font-light dark:text-gray-200">{day}</span>
                 {#each Object.values(heatmapData.views)[dayIndex] as views, index}
                     <Tooltip content="평균 조회수: {views}, 작품수: {Object.values(heatmapData.uploads)[dayIndex][index]}">
                         <div class="w-7 h-7 rounded-md" style="background-color: hsl(100, {views/heatmapData.views.mostViews*100}%, 50%);"></div>
