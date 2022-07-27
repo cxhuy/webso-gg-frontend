@@ -12,40 +12,40 @@
 </script>
 
 <div class="container px-3 mt-4 py-2.5">
-    <div class="flex flex-col gap-2">
-        <div class="flex gap-2">
+    <div class="flex flex-col gap-1.5">
+        <div class="flex gap-1.5">
             {#each heatmapData.mondayViews as views}
-                <div class="w-8 h-8 rounded-md" style="background-color: hsl(100, {views/heatmapData.mostViews*100}%, 50%);"></div>
+                <div class="w-7 h-7 rounded-md" style="background-color: hsl(100, {views/heatmapData.mostViews*100}%, 50%);"></div>
             {/each}
         </div>
-        <div class="flex gap-2">
+        <div class="flex gap-1.5">
             {#each heatmapData.tuesdayViews as views}
-                <div class="w-8 h-8 rounded-md" style="background-color: hsl(100, {views/heatmapData.mostViews*100}%, 50%);"></div>
+                <div class="w-7 h-7 rounded-md" style="background-color: hsl(100, {views/heatmapData.mostViews*100}%, 50%);"></div>
             {/each}
         </div>
-        <div class="flex gap-2">
+        <div class="flex gap-1.5">
             {#each heatmapData.wednesdayViews as views}
-                <div class="w-8 h-8 rounded-md" style="background-color: hsl(100, {views/heatmapData.mostViews*100}%, 50%);"></div>
+                <div class="w-7 h-7 rounded-md" style="background-color: hsl(100, {views/heatmapData.mostViews*100}%, 50%);"></div>
             {/each}
         </div>
-        <div class="flex gap-2">
+        <div class="flex gap-1.5">
             {#each heatmapData.thursdayViews as views}
-                <div class="w-8 h-8 rounded-md" style="background-color: hsl(100, {views/heatmapData.mostViews*100}%, 50%);"></div>
+                <div class="w-7 h-7 rounded-md" style="background-color: hsl(100, {views/heatmapData.mostViews*100}%, 50%);"></div>
             {/each}
         </div>
-        <div class="flex gap-2">
+        <div class="flex gap-1.5">
             {#each heatmapData.fridayViews as views}
-                <div class="w-8 h-8 rounded-md" style="background-color: hsl(100, {views/heatmapData.mostViews*100}%, 50%);"></div>
+                <div class="w-7 h-7 rounded-md" style="background-color: hsl(100, {views/heatmapData.mostViews*100}%, 50%);"></div>
             {/each}
         </div>
-        <div class="flex gap-2">
+        <div class="flex gap-1.5">
             {#each heatmapData.saturdayViews as views}
-                <div class="w-8 h-8 rounded-md" style="background-color: hsl(100, {views/heatmapData.mostViews*100}%, 50%);"></div>
+                <div class="w-7 h-7 rounded-md" style="background-color: hsl(100, {views/heatmapData.mostViews*100}%, 50%);"></div>
             {/each}
         </div>
-        <div class="flex gap-2">
+        <div class="flex gap-1.5">
             {#each heatmapData.sundayViews as views}
-                <div class="w-8 h-8 rounded-md" style="background-color: hsl(100, {views/heatmapData.mostViews*100}%, 50%);"></div>
+                <div class="w-7 h-7 rounded-md" style="background-color: hsl(100, {views/heatmapData.mostViews*100}%, 50%);"></div>
             {/each}
         </div>
     </div>
