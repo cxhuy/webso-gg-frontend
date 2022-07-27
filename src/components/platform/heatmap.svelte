@@ -51,13 +51,8 @@
         </div>
         <div class="flex gap-1.5">
             <span class="mr-2 text-xl font-light dark:text-gray-200">일</span>
-            {#each heatmapData.sundayViews as views, index}
-                <div class="flex flex-col gap-1.5 justify-items-center">
-                    <div class="w-7 h-7 rounded-md" style="background-color: hsl(100, {views/heatmapData.mostViews*100}%, 50%);"></div>
-                    <div class="text-center">
-                        <span class="text-xl font-light dark:text-gray-200">{String(index).padStart(2, '0')}</span>
-                    </div>
-                </div>
+            {#each heatmapData.sundayViews as views}
+                <div class="w-7 h-7 rounded-md" style="background-color: hsl(100, {views/heatmapData.mostViews*100}%, 50%);"></div>
             {/each}
         </div>
     </div>
