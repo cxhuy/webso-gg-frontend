@@ -8,14 +8,10 @@
     const days = ["월", "화", "수", "목", "금", "토", "일"]
 
     let heatmapType, heatmapGenre, heatmapPricing;
-
-    $: outerWidth = 0
 </script>
 
-<svelte:window bind:outerWidth/>
-
 <div class="container px-3 mt-4 xl:mt-8 py-2.5">
-    {#if outerWidth >= 1280}
+    <div class="hidden xl:block">
         <div>
             <span class="text-3xl font-light dark:text-gray-200">시간대별 {heatmapType} 통계</span>
         </div>
@@ -64,7 +60,7 @@
                 </div>
             {/each}
         </div>
-    {/if}
+    </div>
     <div class="mt-0 xl:mt-8">
         <span class="text-3xl font-light dark:text-gray-200">업로드하기 좋은 시간대</span>
     </div>
