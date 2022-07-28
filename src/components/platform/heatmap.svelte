@@ -41,7 +41,10 @@
             <div class="flex gap-1.5">
                 <span class="mr-2 text-xl font-light dark:text-gray-200">{day}</span>
                 {#each Object.values(heatmapData.views)[dayIndex] as views, index}
-                    <Tooltip class="whitespace-pre-line" content="{String(index).padStart(2, '0') + ":00 ~ " + String(index + 1).padStart(2, '0') + ":00\n"}평균 조회수: {views + '\n'}작품수: {Object.values(heatmapData.uploads)[dayIndex][index]}">
+                    <Tooltip 
+                        class="whitespace-pre-line" 
+                        content="{String(index).padStart(2, '0') + ":00 ~ " + String(index + 1).padStart(2, '0') + ":00\n"}평균 조회수: {views.toLocaleString() + '\n'}작품수: {Object.values(heatmapData.uploads)[dayIndex][index].toLocaleString()}"
+                    >
                         <div class="w-7 h-7 rounded-md" style="background-color: hsl(100, {views/heatmapData.views.mostViews*100}%, 50%);"></div>
                     </Tooltip>
                 {/each}
