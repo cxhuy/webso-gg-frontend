@@ -24,8 +24,9 @@
             mostUploads: 100,
         },
     }
-    console.log(Object.values(heatmapData.views)[0])
-    let days = ["월", "화", "수", "목", "금", "토", "일"]
+
+    const days = ["월", "화", "수", "목", "금", "토", "일"]
+    const br = '\n'
 </script>
 
 <div class="container px-3 mt-8 py-2.5">
@@ -33,14 +34,14 @@
         <span class="text-3xl font-light dark:text-gray-200">시간대별 조회수 통계</span>
     </div>
     <div>
-        <span class="text-lg font-light text-gray-600 dark:text-gray-400">해당 시간에 업로드했을때 1시간동안 집계된 조회수 증가</span>
+        <span class="text-lg font-light text-gray-600 dark:text-gray-400">해당 시간에 업로드했을때 1시간동안 집계된 조회수</span>
     </div>
     <div class="mt-2 flex flex-col gap-1.5">
         {#each days as day, dayIndex}
             <div class="flex gap-1.5">
                 <span class="mr-2 text-xl font-light dark:text-gray-200">{day}</span>
                 {#each Object.values(heatmapData.views)[dayIndex] as views, index}
-                    <Tooltip content="평균 조회수: {views}, 작품수: {Object.values(heatmapData.uploads)[dayIndex][index]}">
+                    <Tooltip class="whitespace-pre-line" content="{String(index).padStart(2, '0') + ":00 ~ " + String(index + 1).padStart(2, '0') + ":00\n"}평균 조회수: {views + '\n'}작품수: {Object.values(heatmapData.uploads)[dayIndex][index]}">
                         <div class="w-7 h-7 rounded-md" style="background-color: hsl(100, {views/heatmapData.views.mostViews*100}%, 50%);"></div>
                     </Tooltip>
                 {/each}
