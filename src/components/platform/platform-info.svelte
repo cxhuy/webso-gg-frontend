@@ -20,7 +20,7 @@
                     <span class="text-gray-700 text-2xl font-extralight dark:text-gray-200">총 조회수</span>
                 </div>
                 <div class="mt-1">
-                    <span class="text-4xl font-light dark:text-gray-100">{platformInfoData.totalViews.toLocaleString()}</span>
+                    <span class="text-3xl lg:text-4xl font-light dark:text-gray-100">{platformInfoData.totalViews.toLocaleString()}</span>
                 </div>
             </div>
             <div class="mt-4 flex flex-col text-left">
@@ -28,7 +28,7 @@
                     <span class="text-gray-700 text-2xl font-extralight dark:text-gray-200">총 작품수</span>
                 </div>
                 <div class="mt-1">
-                    <span class="text-4xl font-light dark:text-gray-100">{platformInfoData.totalNovels.toLocaleString()}</span>
+                    <span class="text-3xl lg:text-4xl font-light dark:text-gray-100">{platformInfoData.totalNovels.toLocaleString()}</span>
                 </div>
             </div>
             <div class="mt-4 flex flex-col text-left">
@@ -36,7 +36,7 @@
                     <span class="text-gray-700 text-2xl font-extralight dark:text-gray-200">평균 연재수</span>
                 </div>
                 <div class="mt-1">
-                    <span class="text-4xl font-light dark:text-gray-100">{platformInfoData.avgChapters.toLocaleString()}</span>
+                    <span class="text-3xl lg:text-4xl font-light dark:text-gray-100">{platformInfoData.avgChapters.toLocaleString()}</span>
                 </div>
             </div>
             <div class="mt-4 flex flex-col text-left">
@@ -44,7 +44,7 @@
                     <span class="text-gray-700 text-2xl font-extralight dark:text-gray-200">평균 연재 회수</span>
                 </div>
                 <div class="mt-1">
-                    <span class="text-4xl font-light dark:text-gray-100">주 {platformInfoData.avgPeriod}회</span>
+                    <span class="text-3xl lg:text-4xl font-light dark:text-gray-100">주 {platformInfoData.avgPeriod}회</span>
                 </div>
             </div>
         </div>
