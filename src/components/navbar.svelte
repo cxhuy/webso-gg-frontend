@@ -6,7 +6,7 @@
 
 <nav class="bg-transparent border-gray-200 px-2 sm:px-4 py-2.5">
 	<div class="container flex flex-wrap justify-between items-center mx-auto">
-		<a href="/" class="flex items-center pl-3 md:pl-0">
+		<a href="/" class="flex items-center pl-3 sm:pl-0">
 			<span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"
 				>웹소지지</span
 			>
