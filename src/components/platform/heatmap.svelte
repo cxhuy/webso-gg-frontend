@@ -29,7 +29,12 @@
 </script>
 
 <div class="container px-3 mt-8 py-2.5">
-    <span class="text-3xl font-light dark:text-gray-200">시간대별 조회수 통계</span>
+    <div>
+        <span class="text-3xl font-light dark:text-gray-200">시간대별 조회수 통계</span>
+    </div>
+    <div>
+        <span class="text-lg font-light text-gray-600 dark:text-gray-400">해당 시간에 업로드했을때 1시간동안 집계된 조회수 증가</span>
+    </div>
     <div class="mt-2 flex flex-col gap-1.5">
         {#each days as day, dayIndex}
             <div class="flex gap-1.5">
