@@ -1,6 +1,7 @@
 <script>
     import PlatformInfo from "../../components/platform/platform-info.svelte";
     import Heatmap from "../../components/platform/heatmap.svelte"
+    import KeywordsTagsTable from "../../components/platform/keywordsTagsTable.svelte";
 
     const platformInfoData = {
         platformName: "문피아",
@@ -45,3 +46,4 @@
 
 <PlatformInfo platformInfoData={platformInfoData}/>
 <Heatmap heatmapData={heatmapData} platformPricings={platformPricings} platformGenres={platformGenres}/>
+<KeywordsTagsTable/>
