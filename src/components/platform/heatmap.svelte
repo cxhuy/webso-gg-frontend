@@ -33,59 +33,64 @@
     const bestTimes = ["화 08:00 ~ 09:00", "토 12:00 ~ 13:00", "일 20:00 ~ 21:00", "수 00:00 ~ 01:00", "화 18:00 ~ 19:00"]
 
     let heatmapType, heatmapGenre, heatmapPricing;
+
+    $: outerWidth = 0
 </script>
 
-<div class="container px-3 mt-8 py-2.5">
-    <div>
-        <span class="text-3xl font-light dark:text-gray-200">시간대별 {heatmapType} 통계</span>
-    </div>
-    <div>
-        <span class="text-lg font-light text-gray-600 dark:text-gray-400">해당 시간에 업로드했을때 1시간동안 집계된 {heatmapType}</span>
-    </div>
+<svelte:window bind:outerWidth/>
 
-    <div class="flex mt-4">
-        <select bind:value={heatmapType} id="underline_select" class="block py-1 px-0 w-1/6 text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
-            <option selected value="조회수">조회수</option>
-            <option value="작품수">작품수</option>
-        </select>
-        {#if platformPricings.length > 0}
-            <select bind:value={heatmapPricing} id="underline_select" class="ml-4 block py-1 px-0 w-1/6 text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
-                <option selected value="모든 연재">모든 연재</option>
-                {#each platformPricings as pricing}
-                    <option value={pricing}>{pricing}</option>
+<div class="container px-3 mt-4 xl:mt-8 py-2.5">
+    {#if outerWidth >= 1280}
+        <div>
+            <span class="text-3xl font-light dark:text-gray-200">시간대별 {heatmapType} 통계</span>
+        </div>
+        <div>
+            <span class="text-lg font-light text-gray-600 dark:text-gray-400">해당 시간에 업로드했을때 1시간동안 집계된 {heatmapType}</span>
+        </div>
+
+        <div class="flex mt-4">
+            <select bind:value={heatmapType} id="underline_select" class="block py-1 px-0 w-1/6 text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
+                <option selected value="조회수">조회수</option>
+                <option value="작품수">작품수</option>
+            </select>
+            {#if platformPricings.length > 0}
+                <select bind:value={heatmapPricing} id="underline_select" class="ml-4 block py-1 px-0 w-1/6 text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
+                    <option selected value="모든 연재">모든 연재</option>
+                    {#each platformPricings as pricing}
+                        <option value={pricing}>{pricing}</option>
+                    {/each}
+                </select>
+            {/if}
+            <select bind:value={heatmapGenre} id="underline_select" class="ml-4 block py-1 px-0 w-1/6 text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
+                <option selected value="모든 장르">모든 장르</option>
+                {#each platformGenres as genre}
+                    <option value={genre}>{genre}</option>
                 {/each}
             </select>
-        {/if}
-        <select bind:value={heatmapGenre} id="underline_select" class="ml-4 block py-1 px-0 w-1/6 text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
-            <option selected value="모든 장르">모든 장르</option>
-            {#each platformGenres as genre}
-                <option value={genre}>{genre}</option>
+        </div>
+
+        <div class="mt-3 flex flex-col gap-1.5">
+            {#each days as day, dayIndex}
+                <div class="flex gap-1.5">
+                    <span class="mr-2 text-xl font-light dark:text-gray-200">{day}</span>
+                    {#if heatmapType == "조회수"}
+                        {#each Object.values(heatmapData.views)[dayIndex] as views, index}
+                            <Tooltip class="whitespace-pre-line" content="{String(index).padStart(2, '0') + ":00 ~ " + String(index + 1).padStart(2, '0') + ":00\n"}조회수 : {views.toLocaleString() + '\n'}작품수 : {Object.values(heatmapData.uploads)[dayIndex][index].toLocaleString()}">
+                                <div class="w-7 h-7 rounded-md" style="background-color: hsl(100, {views/heatmapData.views.mostViews*100}%, 50%);"></div>
+                            </Tooltip>
+                        {/each}
+                    {:else}
+                        {#each Object.values(heatmapData.uploads)[dayIndex] as uploads, index}
+                            <Tooltip class="whitespace-pre-line" content="{String(index).padStart(2, '0') + ":00 ~ " + String(index + 1).padStart(2, '0') + ":00\n"}작품수 : {uploads.toLocaleString() + '\n'}조회수 : {Object.values(heatmapData.views)[dayIndex][index].toLocaleString()}">
+                                <div class="w-7 h-7 rounded-md" style="background-color: hsl(35, {uploads/heatmapData.uploads.mostUploads*100}%, 50%);"></div>
+                            </Tooltip>
+                        {/each}
+                    {/if}
+                </div>
             {/each}
-        </select>
-    </div>
-
-    <div class="mt-3 flex flex-col gap-1.5">
-        {#each days as day, dayIndex}
-            <div class="flex gap-1.5">
-                <span class="mr-2 text-xl font-light dark:text-gray-200">{day}</span>
-                {#if heatmapType == "조회수"}
-                    {#each Object.values(heatmapData.views)[dayIndex] as views, index}
-                        <Tooltip class="whitespace-pre-line" content="{String(index).padStart(2, '0') + ":00 ~ " + String(index + 1).padStart(2, '0') + ":00\n"}조회수 : {views.toLocaleString() + '\n'}작품수 : {Object.values(heatmapData.uploads)[dayIndex][index].toLocaleString()}">
-                            <div class="w-7 h-7 rounded-md" style="background-color: hsl(100, {views/heatmapData.views.mostViews*100}%, 50%);"></div>
-                        </Tooltip>
-                    {/each}
-                {:else}
-                    {#each Object.values(heatmapData.uploads)[dayIndex] as uploads, index}
-                        <Tooltip class="whitespace-pre-line" content="{String(index).padStart(2, '0') + ":00 ~ " + String(index + 1).padStart(2, '0') + ":00\n"}작품수 : {uploads.toLocaleString() + '\n'}조회수 : {Object.values(heatmapData.views)[dayIndex][index].toLocaleString()}">
-                            <div class="w-7 h-7 rounded-md" style="background-color: hsl(35, {uploads/heatmapData.uploads.mostUploads*100}%, 50%);"></div>
-                        </Tooltip>
-                    {/each}
-                {/if}
-            </div>
-        {/each}
-    </div>
-
-    <div class="mt-8">
+        </div>
+    {/if}
+    <div class="mt-0 xl:mt-8">
         <span class="text-3xl font-light dark:text-gray-200">업로드하기 좋은 시간대</span>
     </div>
     <div class="flex mt-2">
