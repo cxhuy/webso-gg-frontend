@@ -45,6 +45,17 @@
     const platformPricings = ["무료 작가연재", "무료 일반연재", "유료 연재작"]
     const platformGenres = ["무협", "판타지", "퓨전", "게임", "스포츠", "로맨스", "라이트노벨", "현대판타지", "대체역사", "전쟁·밀리터리", "SF", "추리", "공포·미스테리", "일반소설", "시·수필", "중·단편", "아동소설·동화", "드라마", "연극·시나리오", "BL", "팬픽·패러디"]
 
+    const genreData = [
+		['장르 1', 12345, 1234567890, 12345, 12345678, 12345, 12345678, 12345],
+		['장르 2', 12345, 12345, 12345, 12345, 12345, 12345, 12345],
+		['장르 3', 12345, 12345, 12345, 12345, 12345, 12345, 12345],
+		['장르 4', 12345, 12345, 12345, 12345, 12345, 12345, 12345],
+		['장르 5', 12345, 12345, 12345, 12345, 12345, 12345, 12345],
+		['장르 6', 12345, 12345, 12345, 12345, 12345, 12345, 12345],
+		['장르 7', 12345, 12345, 12345, 12345, 12345, 12345, 12345],
+		['장르 8', 12345, 12345, 12345, 12345, 12345, 12345, 12345],
+	]
+
     const keywordsTagsData = {
         keywordData: [
             ["키워드 1", 12345, 12345],
@@ -96,5 +107,5 @@
 
 <PlatformInfo platformInfoData={platformInfoData}/>
 <Heatmap heatmapData={heatmapData} platformPricings={platformPricings} platformGenres={platformGenres}/>
-<GenreTable/>
+<GenreTable genreData={genreData}/>
 <KeywordsTagsTable keywordsTagsData={keywordsTagsData}/>
