@@ -65,7 +65,7 @@
                     {#each keywordData as keyword}
                         <tr class="bg-black bg-opacity-5 dark:bg-white dark:bg-opacity-5">
                             {#each keyword as data}
-                                <td class="p-3">{data}</td>
+                                <td class="p-3">{data.toLocaleString()}</td>
                             {/each}
                         </tr>
                     {/each}
@@ -88,7 +88,7 @@
                     {#each tagData as tag}
                         <tr class="bg-black bg-opacity-5 dark:bg-white dark:bg-opacity-5">
                             {#each tag as data}
-                                <td class="p-3">{data}</td>
+                                <td class="p-3">{data.toLocaleString()}</td>
                             {/each}
                         </tr>
                     {/each}
