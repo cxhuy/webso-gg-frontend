@@ -4,7 +4,7 @@
 </script>
 
 <div class="m-0 h-min w-min xs:w-screen dark:bg-gray-900">
-    <div class="container mx-auto xl:w-8/12">
+    <div class="container mx-auto lg: w-10/12 xl:w-8/12">
         <Navbar/>
         <slot />
     </div>

@@ -11,7 +11,7 @@
 </script>
 
 <div class="container px-3 mt-4 xl:mt-8 py-2.5">
-    <div class="hidden xl:block">
+    <div class="hidden lg:block">
         <div>
             <span class="text-3xl font-light dark:text-gray-200">시간대별 {heatmapType} 통계</span>
         </div>
@@ -61,7 +61,7 @@
             {/each}
         </div>
     </div>
-    <div class="mt-0 xl:mt-8">
+    <div class="mt-0 lg:mt-8">
         <span class="text-3xl font-light dark:text-gray-200">업로드하기 좋은 시간대</span>
     </div>
     <div>
