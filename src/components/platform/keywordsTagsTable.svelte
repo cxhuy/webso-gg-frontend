@@ -27,7 +27,7 @@
                 </tbody>
             </table>
         </div>
-        <div>
+        <div class="mt-6 md:mt-0">
             <div>
                 <span class="text-3xl font-light dark:text-gray-200">태그별 통계</span>
             </div>
