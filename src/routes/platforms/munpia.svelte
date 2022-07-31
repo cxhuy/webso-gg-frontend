@@ -3,6 +3,7 @@
     import Heatmap from "../../components/platform/heatmap.svelte"
     import GenreTable from "../../components/platform/genreTable.svelte";
     import MonopolyTable from "../../components/platform/monopolyTable.svelte";
+    import UploadPeriodTable from "../../components/platform/uploadPeriodTable.svelte";
     import KeywordsTagsTable from "../../components/platform/keywordsTagsTable.svelte";
 
     const platformInfoData = {
@@ -63,6 +64,16 @@
 		['선독점', 12345, 12345, 12345, 12345, 12345, 12345, 12345],
 	]
 
+    const uploadPeriodData = [
+		['주 1회', 12345, 1234567890, 12345, 12345678, 12345, 12345678, 12345],
+		['주 2회', 12345, 12345, 12345, 12345, 12345, 12345, 12345],
+		['주 3회', 12345, 12345, 12345, 12345, 12345, 12345, 12345],
+		['주 4회', 12345, 12345, 12345, 12345, 12345, 12345, 12345],
+		['주 5회', 12345, 12345, 12345, 12345, 12345, 12345, 12345],
+		['주 6회', 12345, 12345, 12345, 12345, 12345, 12345, 12345],
+		['주 7회 이상', 12345, 12345, 12345, 12345, 12345, 12345, 12345],
+	]
+
     const keywordsTagsData = {
         keywordData: [
             ["키워드 1", 12345, 12345],
@@ -116,4 +127,5 @@
 <Heatmap heatmapData={heatmapData} platformPricings={platformPricings} platformGenres={platformGenres}/>
 <GenreTable genreData={genreData}/>
 <MonopolyTable monopolyData={monopolyData}/>
+<UploadPeriodTable uploadPeriodData={uploadPeriodData}/>
 <KeywordsTagsTable keywordsTagsData={keywordsTagsData}/>
