@@ -33,15 +33,15 @@
             </div>
             <div class="mt-4 flex flex-col text-left">
                 <div>
-                    <span class="text-gray-700 text-2xl font-extralight dark:text-gray-200">평균 연재수</span>
+                    <span class="text-gray-700 text-2xl font-extralight dark:text-gray-200">평균 조회수</span>
                 </div>
                 <div class="mt-1">
-                    <span class="text-3xl lg:text-4xl font-light dark:text-gray-100">{platformInfoData.avgChapters.toLocaleString()}</span>
+                    <span class="text-3xl lg:text-4xl font-light dark:text-gray-100">{platformInfoData.avgViews.toLocaleString()}</span>
                 </div>
             </div>
             <div class="mt-4 flex flex-col text-left">
                 <div>
-                    <span class="text-gray-700 text-2xl font-extralight dark:text-gray-200">평균 연재 회수</span>
+                    <span class="text-gray-700 text-2xl font-extralight dark:text-gray-200">평균 연재 주기</span>
                 </div>
                 <div class="mt-1">
                     <span class="text-3xl lg:text-4xl font-light dark:text-gray-100">주 {platformInfoData.avgPeriod}회</span>

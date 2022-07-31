@@ -12,7 +12,7 @@
         platformMonth: 12,
         totalViews: 123456789,
         totalNovels: 1234,
-        avgChapters: 123,
+        avgViews: 123,
         avgPeriod: 1.2,
     }
 
