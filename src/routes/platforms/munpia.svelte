@@ -2,6 +2,7 @@
     import PlatformInfo from "../../components/platform/platform-info.svelte";
     import Heatmap from "../../components/platform/heatmap.svelte"
     import GenreTable from "../../components/platform/genreTable.svelte";
+    import MonopolyTable from "../../components/platform/monopolyTable.svelte";
     import KeywordsTagsTable from "../../components/platform/keywordsTagsTable.svelte";
 
     const platformInfoData = {
@@ -56,6 +57,12 @@
 		['장르 8', 12345, 12345, 12345, 12345, 12345, 12345, 12345],
 	]
 
+    const monopolyData = [
+		['비독점', 12345, 1234567890, 12345, 12345678, 12345, 12345678, 12345],
+		['독점', 12345, 12345, 12345, 12345, 12345, 12345, 12345],
+		['선독점', 12345, 12345, 12345, 12345, 12345, 12345, 12345],
+	]
+
     const keywordsTagsData = {
         keywordData: [
             ["키워드 1", 12345, 12345],
@@ -108,4 +115,5 @@
 <PlatformInfo platformInfoData={platformInfoData}/>
 <Heatmap heatmapData={heatmapData} platformPricings={platformPricings} platformGenres={platformGenres}/>
 <GenreTable genreData={genreData}/>
+<MonopolyTable monopolyData={monopolyData}/>
 <KeywordsTagsTable keywordsTagsData={keywordsTagsData}/>
