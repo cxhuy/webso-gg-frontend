@@ -41,12 +41,12 @@
                     <div class="ml-4"><span class="text-gray-600 dark:text-gray-400">평균 조회수: </span>{genre[3].toLocaleString()}</div>
                 </div>
                 <div class="grid grid-cols-2">
-                    <div><span class="text-gray-600 dark:text-gray-400">좋아요 수: </span>{genre[2].toLocaleString()}</div>
-                    <div class="ml-4"><span class="text-gray-600 dark:text-gray-400">평균 좋아요 수: </span>{genre[3].toLocaleString()}</div>
+                    <div><span class="text-gray-600 dark:text-gray-400">좋아요 수: </span>{genre[4].toLocaleString()}</div>
+                    <div class="ml-4"><span class="text-gray-600 dark:text-gray-400">평균 좋아요 수: </span>{genre[5].toLocaleString()}</div>
                 </div>
                 <div class="grid grid-cols-2">
-                    <div><span class="text-gray-600 dark:text-gray-400">선작수: </span>{genre[2].toLocaleString()}</div>
-                    <div class="ml-4"><span class="text-gray-600 dark:text-gray-400">평균 선작수: </span>{genre[3].toLocaleString()}</div>
+                    <div><span class="text-gray-600 dark:text-gray-400">선작수: </span>{genre[6].toLocaleString()}</div>
+                    <div class="ml-4"><span class="text-gray-600 dark:text-gray-400">평균 선작수: </span>{genre[7].toLocaleString()}</div>
                 </div>
             </div>
         {/each}
