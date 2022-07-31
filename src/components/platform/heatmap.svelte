@@ -69,7 +69,7 @@
     </div>
     <div class="flex mt-2">
         {#each heatmapData.bestTimes as time}
-            <div class="w-fit p-2 mr-3 rounded-md bg-black bg-opacity-10 dark:bg-white dark:bg-opacity-5">
+            <div class="w-fit p-2 mr-3 rounded-md bg-black bg-opacity-5 dark:bg-white dark:bg-opacity-5">
                 <span class="text-xl font-light dark:text-gray-200">{time}</span>
             </div>
         {/each}
