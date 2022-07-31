@@ -47,9 +47,9 @@
 
 </script>
 
-<div class="container px-3 py-2.5">
+<div class="container px-3 py-2.5 mt-6">
     <div class="{tagData.length > 0 ? "grid md:grid-cols-2 gap-4" : ""}">
-        <div class="mt-6">
+        <div>
             <div>
                 <span class="text-3xl font-light dark:text-gray-200">키워드별 통계</span>
             </div>
@@ -72,7 +72,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="mt-6">
+        <div>
             <div>
                 <span class="text-3xl font-light dark:text-gray-200">태그별 통계</span>
             </div>
