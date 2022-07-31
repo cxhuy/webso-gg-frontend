@@ -15,7 +15,7 @@
         totalViews: 123456789,
         totalNovels: 1234,
         avgViews: 123,
-        avgPeriod: 1.2,
+        avgChapters: 1.2,
     }
 
     const heatmapData = {
