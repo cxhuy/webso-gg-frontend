@@ -1,6 +1,7 @@
 <script>
     import PlatformInfo from "../../components/platform/platform-info.svelte";
     import Heatmap from "../../components/platform/heatmap.svelte"
+    import GenreTable from "../../components/platform/genreTable.svelte";
     import KeywordsTagsTable from "../../components/platform/keywordsTagsTable.svelte";
 
     const platformInfoData = {
@@ -95,4 +96,5 @@
 
 <PlatformInfo platformInfoData={platformInfoData}/>
 <Heatmap heatmapData={heatmapData} platformPricings={platformPricings} platformGenres={platformGenres}/>
+<GenreTable/>
 <KeywordsTagsTable keywordsTagsData={keywordsTagsData}/>
