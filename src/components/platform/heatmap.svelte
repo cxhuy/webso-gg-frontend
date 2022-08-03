@@ -60,7 +60,7 @@
         <span class="text-3xl font-light dark:text-gray-200">업로드하기 좋은 시간대</span>
     </div>
     <div>
-        <span class="text-lg font-light text-gray-600 dark:text-gray-400">올라오는 작품수가 적당하고 평균 조회수가 높은 시간대</span>
+        <span class="text-lg font-light text-gray-600 dark:text-gray-400">평균 조회수가 높은 시간대</span>
     </div>
     <div class="flex mt-2">
         {#each heatmapData[heatmapGenre].bestTimes as time}
