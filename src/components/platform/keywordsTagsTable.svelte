@@ -27,28 +27,30 @@
                 </tbody>
             </table>
         </div>
-        <div class="mt-6 md:mt-0">
-            <div>
-                <span class="text-3xl font-light dark:text-gray-200">인기 태그</span>
-            </div>
-            <table class="mt-3 w-full table-auto font-light dark:text-gray-200">
-                <thead class="bg-black bg-opacity-10 dark:bg-white dark:bg-opacity-10">
-                    <tr class="text-left">
-                        <th class="w-1/3 p-3 font-normal">태그</th>
-                        <th class="w-1/3 p-3 font-normal">작품수</th>
-                        <th class="w-1/3 p-3 font-normal">평균 조회수</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {#each Object.values(keywordsTagsData.tagData) as tag}
-                        <tr class="bg-black bg-opacity-5 dark:bg-white dark:bg-opacity-5">
-                            {#each Object.values(tag) as data}
-                                <td class="p-3">{data.toLocaleString()}</td>
-                            {/each}
+        {#if Object.values(keywordsTagsData.tagData).length > 0}
+            <div class="mt-6 md:mt-0">
+                <div>
+                    <span class="text-3xl font-light dark:text-gray-200">인기 태그</span>
+                </div>
+                <table class="mt-3 w-full table-auto font-light dark:text-gray-200">
+                    <thead class="bg-black bg-opacity-10 dark:bg-white dark:bg-opacity-10">
+                        <tr class="text-left">
+                            <th class="w-1/3 p-3 font-normal">태그</th>
+                            <th class="w-1/3 p-3 font-normal">작품수</th>
+                            <th class="w-1/3 p-3 font-normal">평균 조회수</th>
                         </tr>
-                    {/each}
-                </tbody>
-            </table>
-        </div>
+                    </thead>
+                    <tbody>
+                        {#each Object.values(keywordsTagsData.tagData) as tag}
+                            <tr class="bg-black bg-opacity-5 dark:bg-white dark:bg-opacity-5">
+                                {#each Object.values(tag) as data}
+                                    <td class="p-3">{data.toLocaleString()}</td>
+                                {/each}
+                            </tr>
+                        {/each}
+                    </tbody>
+                </table>
+            </div>
+        {/if}
     </div>
 </div>
