@@ -3,7 +3,7 @@
 </script>
 
 <div class="container px-3 py-2.5 mt-6">
-    <div class="{keywordsTagsData.tagData.length > 0 ? "grid md:grid-cols-2 gap-4" : ""}">
+    <div class="{Object.values(keywordsTagsData.tagData).length > 0 ? "grid md:grid-cols-2 gap-4" : ""}">
         <div>
             <div>
                 <span class="text-3xl font-light dark:text-gray-200">인기 키워드</span>
@@ -17,9 +17,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {#each keywordsTagsData.keywordData as keyword}
+                    {#each Object.values(keywordsTagsData.keywordData) as keyword}
                         <tr class="bg-black bg-opacity-5 dark:bg-white dark:bg-opacity-5">
-                            {#each keyword as data}
+                            {#each Object.values(keyword) as data}
                                 <td class="p-3">{data.toLocaleString()}</td>
                             {/each}
                         </tr>
@@ -40,9 +40,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {#each keywordsTagsData.tagData as tag}
+                    {#each Object.values(keywordsTagsData.tagData) as tag}
                         <tr class="bg-black bg-opacity-5 dark:bg-white dark:bg-opacity-5">
-                            {#each tag as data}
+                            {#each Object.values(tag) as data}
                                 <td class="p-3">{data.toLocaleString()}</td>
                             {/each}
                         </tr>

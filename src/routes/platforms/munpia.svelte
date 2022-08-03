@@ -129,4 +129,4 @@
 <GenreTable genreData={MunpiaData.genreData}/>
 <MonopolyTable monopolyData={MunpiaData.monopolyData}/>
 <UploadPeriodTable weeklyUploadCountData={MunpiaData.weeklyUploadCountData}/>
-<KeywordsTagsTable keywordsTagsData={keywordsTagsData}/>
+<KeywordsTagsTable keywordsTagsData={MunpiaData.keywordsTagsData}/>
