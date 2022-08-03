@@ -126,7 +126,7 @@
 
 <PlatformInfo platformInfoData={MunpiaData.platformInfoData}/>
 <Heatmap heatmapData={MunpiaData.heatmapData} platformPricings={MunpiaData.platformInfoData.platformPricings} platformGenres={MunpiaData.platformInfoData.platformGenres}/>
-<GenreTable genreData={genreData}/>
+<GenreTable genreData={MunpiaData.genreData}/>
 <MonopolyTable monopolyData={monopolyData}/>
 <UploadPeriodTable uploadPeriodData={uploadPeriodData}/>
 <KeywordsTagsTable keywordsTagsData={keywordsTagsData}/>
