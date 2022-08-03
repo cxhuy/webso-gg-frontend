@@ -35,9 +35,12 @@
                 </select>
             {/if}
             <select bind:value={heatmapGenre} id="underline_select" class="ml-4 block py-1 px-0 w-1/6 text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
-                <option selected value="모든 장르">모든 장르</option>
                 {#each platformGenres as genre}
-                    <option value={genre}>{genre}</option>
+                    {#if genre == "모든 장르"}
+                        <option selected value="모든 장르">모든 장르</option>
+                    {:else}
+                        <option value={genre}>{genre}</option>
+                    {/if}
                 {/each}
             </select>
         </div>
