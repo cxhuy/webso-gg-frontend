@@ -6,6 +6,8 @@
     import UploadPeriodTable from "../../components/platform/uploadPeriodTable.svelte";
     import KeywordsTagsTable from "../../components/platform/keywordsTagsTable.svelte";
 
+    import MunpiaData from "../../jsondata/munpia.json"
+
     const platformInfoData = {
         platformName: "문피아",
         platformYear: 2012,
@@ -122,7 +124,7 @@
     }
 </script>
 
-<PlatformInfo platformInfoData={platformInfoData}/>
+<PlatformInfo platformInfoData={MunpiaData.platformInfoData}/>
 <Heatmap heatmapData={heatmapData} platformPricings={platformInfoData.platformPricings} platformGenres={platformInfoData.platformGenres}/>
 <GenreTable genreData={genreData}/>
 <MonopolyTable monopolyData={monopolyData}/>
