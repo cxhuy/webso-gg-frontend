@@ -2,14 +2,12 @@
     import {Tooltip} from 'flowbite-svelte'
 
     export let heatmapData;
-    export let platformPricings;
     export let platformGenres;
 
     const days = ["월", "화", "수", "목", "금", "토", "일"];
 
     let heatmapType = "조회수";
     let heatmapGenre = "모든 장르";
-    let heatmapPricing;
 </script>
 
 <div class="container px-3 mt-4 xl:mt-8 py-2.5">
@@ -26,14 +24,6 @@
                 <option selected value="조회수">조회수</option>
                 <option value="작품수">작품수</option>
             </select>
-            {#if platformPricings.length > 0}
-                <select bind:value={heatmapPricing} id="underline_select" class="ml-4 block py-1 px-0 w-1/6 text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
-                    <option selected value="모든 연재">모든 연재</option>
-                    {#each platformPricings as pricing}
-                        <option value={pricing}>{pricing}</option>
-                    {/each}
-                </select>
-            {/if}
             <select bind:value={heatmapGenre} id="underline_select" class="ml-4 block py-1 px-0 w-1/6 text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
                 {#each platformGenres as genre}
                     {#if genre == "모든 장르"}
