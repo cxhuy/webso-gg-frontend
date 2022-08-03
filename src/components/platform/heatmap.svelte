@@ -1,5 +1,6 @@
 <script>
     import {Tooltip} from 'flowbite-svelte'
+import { validate_component } from 'svelte/internal';
 
     export let heatmapData;
     export let platformGenres;
@@ -8,6 +9,9 @@
 
     let heatmapType = "조회수";
     let heatmapGenre = "모든 장르";
+
+    // let sigmoid = (val, mostVal) => 1 / (1 + Math.pow(Math.e, -0.5 * (val - mostVal/2)))
+    // let sigmoid = (val, mostVal) => 
 </script>
 
 <div class="container px-3 mt-4 xl:mt-8 py-2.5">
@@ -42,13 +46,13 @@
                     {#if heatmapType == "조회수"}
                         {#each Object.values(heatmapData[heatmapGenre]["views"][dayIndex]) as views, index}
                             <Tooltip class="whitespace-pre-line" content="{String(index).padStart(2, '0') + ":00 ~ " + String(index + 1).padStart(2, '0') + ":00\n"}조회수 : {views.toLocaleString() + '\n'}작품수 : {heatmapData[heatmapGenre]["uploads"][dayIndex][index].toLocaleString()}">
-                                <div class="w-7 h-7 rounded-md" style="background-color: hsl(100, {views/heatmapData[heatmapGenre].mostViews*100}%, 50%);"></div>
+                                <div class="w-7 h-7 rounded-md" style="background-color: hsl(100, {Math.sqrt(views/heatmapData[heatmapGenre].mostViews)*100}%, 50%);"></div>
                             </Tooltip>
                         {/each}
                     {:else}
                         {#each Object.values(heatmapData[heatmapGenre]["uploads"][dayIndex]) as uploads, index}
                             <Tooltip class="whitespace-pre-line" content="{String(index).padStart(2, '0') + ":00 ~ " + String(index + 1).padStart(2, '0') + ":00\n"}작품수 : {uploads.toLocaleString() + '\n'}조회수 : {heatmapData[heatmapGenre]["views"][dayIndex][index].toLocaleString()}">
-                                <div class="w-7 h-7 rounded-md" style="background-color: hsl(35, {uploads/heatmapData[heatmapGenre].mostUploads*100}%, 50%);"></div>
+                                <div class="w-7 h-7 rounded-md" style="background-color: hsl(35, {Math.sqrt(uploads/heatmapData[heatmapGenre].mostUploads)*100}%, 50%);"></div>
                             </Tooltip>
                         {/each}
                     {/if}
