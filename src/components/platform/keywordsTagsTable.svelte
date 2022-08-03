@@ -6,7 +6,7 @@
     <div class="{keywordsTagsData.tagData.length > 0 ? "grid md:grid-cols-2 gap-4" : ""}">
         <div>
             <div>
-                <span class="text-3xl font-light dark:text-gray-200">키워드별 통계</span>
+                <span class="text-3xl font-light dark:text-gray-200">인기 키워드</span>
             </div>
             <table class="mt-3 w-full table-auto font-light dark:text-gray-200">
                 <thead class="bg-black bg-opacity-10 dark:bg-white dark:bg-opacity-10">
@@ -29,7 +29,7 @@
         </div>
         <div class="mt-6 md:mt-0">
             <div>
-                <span class="text-3xl font-light dark:text-gray-200">태그별 통계</span>
+                <span class="text-3xl font-light dark:text-gray-200">인기 태그</span>
             </div>
             <table class="mt-3 w-full table-auto font-light dark:text-gray-200">
                 <thead class="bg-black bg-opacity-10 dark:bg-white dark:bg-opacity-10">
