@@ -125,7 +125,7 @@
 </script>
 
 <PlatformInfo platformInfoData={MunpiaData.platformInfoData}/>
-<Heatmap heatmapData={heatmapData} platformPricings={platformInfoData.platformPricings} platformGenres={platformInfoData.platformGenres}/>
+<Heatmap heatmapData={MunpiaData.heatmapData} platformPricings={MunpiaData.platformInfoData.platformPricings} platformGenres={MunpiaData.platformInfoData.platformGenres}/>
 <GenreTable genreData={genreData}/>
 <MonopolyTable monopolyData={monopolyData}/>
 <UploadPeriodTable uploadPeriodData={uploadPeriodData}/>
