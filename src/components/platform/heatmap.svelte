@@ -46,13 +46,13 @@ import { validate_component } from 'svelte/internal';
                     {#if heatmapType == "조회수"}
                         {#each Object.values(heatmapData[heatmapGenre]["views"][dayIndex]) as views, index}
                             <Tooltip class="whitespace-pre-line" content="{String(index).padStart(2, '0') + ":00 ~ " + String(index + 1).padStart(2, '0') + ":00\n"}조회수 : {views.toLocaleString() + '\n'}작품수 : {heatmapData[heatmapGenre]["uploads"][dayIndex][index].toLocaleString()}">
-                                <div class="w-7 h-7 rounded-md" style="background-color: hsl(100, {Math.sqrt(views/heatmapData[heatmapGenre].mostViews)*100}%, 50%);"></div>
+                                <div class="w-7 h-7 rounded-md" style="background-color: hsl(100, {views/heatmapData[heatmapGenre].mostViews*100}%, 50%);"></div>
                             </Tooltip>
                         {/each}
                     {:else}
                         {#each Object.values(heatmapData[heatmapGenre]["uploads"][dayIndex]) as uploads, index}
                             <Tooltip class="whitespace-pre-line" content="{String(index).padStart(2, '0') + ":00 ~ " + String(index + 1).padStart(2, '0') + ":00\n"}작품수 : {uploads.toLocaleString() + '\n'}조회수 : {heatmapData[heatmapGenre]["views"][dayIndex][index].toLocaleString()}">
-                                <div class="w-7 h-7 rounded-md" style="background-color: hsl(35, {Math.sqrt(uploads/heatmapData[heatmapGenre].mostUploads)*100}%, 50%);"></div>
+                                <div class="w-7 h-7 rounded-md" style="background-color: hsl(35, {uploads/heatmapData[heatmapGenre].mostUploads*100}%, 50%);"></div>
                             </Tooltip>
                         {/each}
                     {/if}
