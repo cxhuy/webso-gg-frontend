@@ -1,6 +1,5 @@
 <script>
     import {Tooltip} from 'flowbite-svelte'
-import { validate_component } from 'svelte/internal';
 
     export let heatmapData;
     export let platformGenres;
