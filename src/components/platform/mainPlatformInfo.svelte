@@ -4,7 +4,7 @@
 </script>
 
 <a href="/platforms/{platformPageName}">
-    <div class="w-full mx-auto mt-3 p-3 font-light rounded-md dark:text-gray-200 bg-black bg-opacity-5 dark:bg-white dark:bg-opacity-5">
+    <div class="w-full lg:w-2/3 mx-auto mt-3 p-3 font-light rounded-md dark:text-gray-200 bg-black bg-opacity-5 dark:bg-white dark:bg-opacity-5">
         <div class="text-xl">{platformInfo.platformName}</div>
         <div class="mt-2 grid grid-cols-2">
             <div><span class="text-gray-600 dark:text-gray-400">총 조회수: </span>{platformInfo.totalViews.toLocaleString()}</div>
