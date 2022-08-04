@@ -4,7 +4,6 @@
     import GenreTable from "../../components/platform/genreTable.svelte";
     import MonopolyTable from "../../components/platform/monopolyTable.svelte";
     import UploadPeriodTable from "../../components/platform/uploadPeriodTable.svelte";
-    import PricingTable from "../../components/platform/pricingTable.svelte";
     import KeywordsTagsTable from "../../components/platform/keywordsTagsTable.svelte";
 
     import KakaopageData from "../../jsondata/kakaopage.json"
